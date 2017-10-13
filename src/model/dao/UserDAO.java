@@ -11,6 +11,7 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 
 import model.DBManager;
+import model.pojo.Product;
 import model.pojo.User;
 
 public class UserDAO {
@@ -35,7 +36,7 @@ public class UserDAO {
 	
 	
 	//TODO return favorites products for this user
-	public List getFavorites(long user_id){
+	public List<Product> getFavorites(long user_id){
 		return null;
 	}
 	
@@ -96,7 +97,7 @@ public class UserDAO {
 	}
 	
 	public User getUser(String email){
-		
+		return null;
 	}
 	
 }
