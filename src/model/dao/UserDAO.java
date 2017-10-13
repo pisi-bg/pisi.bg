@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -20,6 +21,22 @@ public class UserDAO {
 			instance = new UserDAO();
 		}
 		return instance;
+	}
+	
+	//TODO insert into favorite collection
+	public void insertFavorite(long product_ID){
+		
+	}
+	
+	//TODO remove from favorite collection and from DB
+	public void removeFavorite(long product_ID){
+		
+	}
+	
+	
+	//TODO return favorites products for this user
+	public List getFavorites(long user_id){
+		return null;
 	}
 	
 	// this method insert user info to database
@@ -78,5 +95,8 @@ public class UserDAO {
 		return rs.next();
 	}
 	
+	public User getUser(String email){
+		
+	}
 	
 }

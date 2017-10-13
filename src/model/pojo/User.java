@@ -1,9 +1,6 @@
 package model.pojo;
 
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Set;
 
 public class User {
 	private long id;
@@ -13,8 +10,8 @@ public class User {
 	private String password;
 	private boolean isMale;
 	private boolean isAdmin;
+	private Set<Product> favorites;
 		
-	private List<Product> cart;
 
 	//constructor with email and pass for login
 	public User(String email, String pass){
@@ -22,13 +19,12 @@ public class User {
 		this.password = pass;
 	}
 	
-	//constructor with fullpack info for register
+	//constructor for register
 	public User(String firstName, String lastName, String email, String password, boolean isMale) {
 		this(email,password);
 		this.firstName = firstName;
 		this.lastName = lastName;		
 		this.isMale = isMale;
-		this.cart = new ArrayList<>();
 		this.isAdmin = false;
 	}
 	
@@ -60,11 +56,6 @@ public class User {
 	//return user last name
 	public String getLastName() {
 		return lastName;
-	}
-
-	//return unmodifiable collection of user products in cart;
-	public List<Product> getCart() {
-		return Collections.unmodifiableList(cart);
 	}
 	
 	//set id which is returned by the database
