@@ -16,7 +16,7 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
-	// ala bala testing git
+	// ala bala novo v order branch
 
 	public static synchronized OrderDao getInstance() {
 		if (instance == null) {
