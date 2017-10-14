@@ -16,6 +16,8 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
+	// ala bala testing git
+
 	public static synchronized OrderDao getInstance() {
 		if (instance == null) {
 			instance = new OrderDao();
