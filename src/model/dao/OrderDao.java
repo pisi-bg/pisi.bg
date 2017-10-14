@@ -16,7 +16,7 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
-	// promeni v master
+	// sick of git!!
 
 	public static synchronized OrderDao getInstance() {
 		// redove ot kod
