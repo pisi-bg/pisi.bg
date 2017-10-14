@@ -16,7 +16,8 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
-	// ala bala novo 20 comment
+	// ala bala rebase stuff
+	// ami sega?
 
 	public static synchronized OrderDao getInstance() {
 		if (instance == null) {
