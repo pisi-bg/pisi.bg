@@ -16,9 +16,6 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
-	// ala bala rebase stuff
-	// ami sega?
-
 	public static synchronized OrderDao getInstance() {
 		if (instance == null) {
 			instance = new OrderDao();
