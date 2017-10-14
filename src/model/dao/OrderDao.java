@@ -16,7 +16,7 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
-	// ala bala master comment
+	// ala bala novo 20 comment
 
 	public static synchronized OrderDao getInstance() {
 		if (instance == null) {
