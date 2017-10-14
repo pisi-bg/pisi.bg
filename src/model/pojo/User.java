@@ -1,6 +1,6 @@
 package model.pojo;
 
-import java.util.Set;
+import java.util.List;
 
 public class User {
 	private long id;
@@ -10,7 +10,7 @@ public class User {
 	private String password;
 	private boolean isMale;
 	private boolean isAdmin;
-	private Set<Product> favorites;
+	private List<Product> favorites;
 		
 
 	//constructor with email and pass for login
@@ -19,6 +19,21 @@ public class User {
 		this.password = pass;
 	}
 	
+	// constructor with all fields
+	public User(long id, String firstName, String lastName, String email, String password, boolean isMale,
+			boolean isAdmin, List<Product> favorites) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.isMale = isMale;
+		this.isAdmin = isAdmin;
+		this.favorites = favorites;
+	}
+
+
+
 	//constructor for register
 	public User(String firstName, String lastName, String email, String password, boolean isMale) {
 		this(email,password);
@@ -63,5 +78,18 @@ public class User {
 		this.id = id;
 	}
 	
+	//returns user id
+	public long getId() {
+		return id;
+	}
+	
+	// add favorites after adding it to DB 
+	public void addToFavorites(Product p){
+		this.favorites.add(p);
+	}
+	
+	public void removeFromFavorites(Product p){
+		this.favorites.remove(p);
+	}
 
 }
