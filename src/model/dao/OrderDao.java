@@ -16,9 +16,9 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
-	// ala bala novo 20 comment
-
-	public static synchronized OrderDao getInstance() {
+	// ala bala not git problemi
+	public static OrderDao getInstance(String s) {}
+	public static OrderDao getInstance() {
 		if (instance == null) {
 			instance = new OrderDao();
 		}
