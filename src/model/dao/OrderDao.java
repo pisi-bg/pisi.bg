@@ -16,7 +16,10 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
+	// promeni v master
+
 	public static synchronized OrderDao getInstance() {
+		// redove ot kod
 		if (instance == null) {
 			instance = new OrderDao();
 		}
