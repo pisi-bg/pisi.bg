@@ -16,7 +16,8 @@ public class OrderDao {
 	private OrderDao() {
 	}
 
-	// sick of git!! asdasd
+	// sick of git!!!
+	// me too
 
 	public static synchronized OrderDao getInstance() {
 		// redove ot kod
