@@ -77,9 +77,30 @@ public class ProductDAO {
 		p.setId(rs.getLong(1));
 	}
 
-	// TODO
-	public void removeQuantity(long product_id, int quantity) {
+	// updating in stock quantity for product
+	public boolean removeQuantity(long product_id, int invokedQuantity) throws SQLException {
+		int result = -1;
+		Connection con = DBManager.getInstance().getConnection();
+		// checks if there is enough quantity
+		PreparedStatement stmt = con.prepareStatement("SELECT instock_count FROM pisi.products WHERE product_id = ?");
+		stmt.setLong(1, product_id);
+		ResultSet rs = stmt.executeQuery();
+		int currentInstockCount = (int) rs.getLong("instock_count");
+		if (invokedQuantity >= currentInstockCount) {
+			stmt = con.prepareStatement("UPDATE `pisi`.`products` SET `instock_count`='?' WHERE `product_id`='?'");
+			int newQuantity = currentInstockCount - invokedQuantity;
+			stmt.setLong(1, newQuantity);
+			stmt.setLong(2, product_id);
+			result = stmt.executeUpdate();
+			if (newQuantity == 0) {
+				// TODO throw update 'Not In stock' in the Web view
+			}
+		} else {
+			// ?throw NotEnoughQuantityException
+			return false;
+		}
 
+		return result == 1 ? true : false;
 	}
 
 	// this method returns a product by its ID;
